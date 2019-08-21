@@ -12,4 +12,14 @@ class Pokemon
     SQL
     db.execute(sql, name, type)
   end
+
+  def self.find(id, db)
+    sql = <<-SQL
+      SELECT *
+      FROM pokemon
+      WHERE id = #{id}
+    SQL
+    return_data = db.execute(sql)
+    binding.pry
+  end
 end
