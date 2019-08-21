@@ -21,7 +21,7 @@ class Pokemon
     SQL
     return_data = db.execute(sql)
     new_pokemon = Pokemon.new(self.create_info_hash(return_data[0], db))
-    binding.pry
+    new_pokemon
   end
 
   def self.create_info_hash(array, db)
