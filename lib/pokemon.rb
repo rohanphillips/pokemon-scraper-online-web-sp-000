@@ -20,11 +20,11 @@ class Pokemon
       WHERE id = #{id}
     SQL
     return_data = db.execute(sql)
-    new_pokemon = Pokemon.new(create_info_hash(return_data[0], db))
+    new_pokemon = Pokemon.new(self.create_info_hash(return_data[0], db))
     binding.pry
   end
 
-  def create_info_hash(array, db)
+  def self.create_info_hash(array, db)
     hash = {}
     hash[:id] = array[0]
     hash[:name] = array[1]
