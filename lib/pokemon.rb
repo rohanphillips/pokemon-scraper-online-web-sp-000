@@ -5,7 +5,7 @@ class Pokemon
     info_hash.each{|key, value| self.send(("#{key}="), value)}
   end
 
-  def save(name, type, db)
+  def self.save(name, type, db)
     sql = <<-SQL
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
